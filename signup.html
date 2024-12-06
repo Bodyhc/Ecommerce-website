@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jfif" href="img/logo.jfif">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>SignUp || Login</title>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Sign-Up Form -->
+    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg my-8 sm:max-w-lg lg:max-w-xl xl:max-w-2xl"
+        id="signup-form-container">
+        <h2 class="text-2xl font-semibold text-center mb-6">Create an Account</h2>
+
+        <form action="/signup" method="POST" id="signup-form">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700">Full Name</label>
+                <input type="text" id="name" name="name" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Enter your full name">
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700">Email Address</label>
+                <input type="email" id="email" name="email" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Enter your email">
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="block text-gray-700">Password</label>
+                <input type="password" id="password" name="password" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Enter your password">
+            </div>
+
+            <div class="mb-4">
+                <label for="confirm-password" class="block text-gray-700">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Confirm your password">
+            </div>
+
+            <button type="submit" class="w-full py-2 bg-black text-white rounded-lg">Sign Up</button>
+        </form>
+
+        <div class="mt-4 text-center">
+            <p>Already have an account? <a href="javascript:void(0);" id="to-signin" class="text-blue-500">Sign In</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Sign-In Form -->
+    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg my-8 sm:max-w-lg lg:max-w-xl xl:max-w-2xl"
+        id="signin-form-container" style="display: none;">
+        <h2 class="text-2xl font-semibold text-center mb-6">Sign In to Your Account</h2>
+
+        <form action="/signin" method="POST" id="signin-form">
+            <div class="mb-4">
+                <label for="email-signin" class="block text-gray-700">Email Address</label>
+                <input type="email" id="email-signin" name="email-signin" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Enter your email">
+            </div>
+
+            <div class="mb-4">
+                <label for="password-signin" class="block text-gray-700">Password</label>
+                <input type="password" id="password-signin" name="password-signin" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Enter your password">
+            </div>
+
+            <button type="submit" class="w-full py-2 bg-black text-white rounded-lg">Sign In</button>
+        </form>
+
+        <div class="mt-4 text-center">
+            <p>Don't have an account? <a href="javascript:void(0);" id="to-signup" class="text-blue-500">Sign Up</a></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("to-signin").addEventListener("click", function () {
+            document.getElementById("signup-form-container").style.display = "none";
+            document.getElementById("signin-form-container").style.display = "block";
+        });
+        document.getElementById("to-signup").addEventListener("click", function () {
+            document.getElementById("signup-form-container").style.display = "block";
+            document.getElementById("signin-form-container").style.display = "none";
+        });
+    </script>
+
+    <script src="assts/js/main.js"></script>
+
+</body>
+
+</html>

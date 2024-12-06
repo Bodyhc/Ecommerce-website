@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assts/css/style.css">
+    <link rel="icon" type="image/jfif" href="img/logo.jfif">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>My Profile</title>
+</head>
+
+<body>
+    <header>
+        <p class="bg-black text-white flex items-center justify-center text-left md:text-xl text-xs md:w-50 lg:p-3 p-0">
+            Sign up and get 20%
+            off to your first order . <a href="/signup.html" class="underline">Sign Up Now</a></p>
+    </header>
+
+    <nav class="bg-white p-2 border-b border-gray-200 whitespace-nowrap mx-auto">
+        <div class="px-5 mx-auto flex items-center w-full justify-between">
+            <!-- Logo -->
+            <a href="index.html" class=" font-bold text-gray-1000 text-2xl font-sans">SHOP.BO</a>
+    
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-10">
+                <!-- Shop Dropdown -->
+                <div x-data="{ open: false }" class="relative">
+                    <button @click="open = !open"
+                        class="text-gray-700 hover:text-gray-900 focus:outline-none flex items-center text-lg">
+                        Shop
+                        <svg class="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div x-show="open" @click.away="open = false" x-cloak
+                        class="absolute mt-2 w-48 bg-white rounded-md shadow-lg z-50">
+                        <a href="men.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Men</a>
+                        <a href="women.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Women</a>
+                        <a href="Productdetail.html"
+                            class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Productdetail</a>
+                    </div>
+                </div>
+                <!-- Other Navbar Links -->
+                <a href="#" class="text-gray-700 hover:text-gray-900 text-lg">On Sale</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900 text-lg">New Arrivals</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900 text-lg">Brands</a>
+            </div>
+    
+            <!-- Search and Icons -->
+            <div class="flex items-center space-x-5">
+                <!-- Search Input (shown on small and larger screens) -->
+                <input type="text" placeholder="Search for products..."
+                    class="hidden lg:block w-80 px-4 py-2 bg-gray-100 rounded-full focus:outline-none">
+    
+                <!-- Search Icon Button -->
+                <a href="ShopCart.html" class="w-10 h-10 hidden lg:flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="w-5 h-5">
+                        <path
+                            d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
+                    </svg>
+                </a>
+    
+                <!-- Profile and Settings Dropdown -->
+                <div x-data="{ open: false }" class="relative inline-block">
+                    <!-- Profile and Settings Button -->
+                    <button @click="open = !open" class="w-10 h-10 hidden lg:block" class="profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-5 h-5">
+                            <path
+                                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                        </svg>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div x-show="open" @click.away="open = false" x-cloak
+                        class="absolute right-5 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
+                        <a href="signup.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Sign Up | sign
+                            In</a>
+                        <a href="profile.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
+                        <a href="setting.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Settings</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Mobile Sidebar -->
+            <div x-data="{ mobileMenuOpen: false }" class="md:block lg:hidden">
+                <!-- Hamburger Button for Mobile -->
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-2 text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                        </path>
+                    </svg>
+                </button>
+    
+                <!-- Overlay Background -->
+                <div x-show="mobileMenuOpen" class="fixed inset-0 bg-black bg-opacity-50 z-40"
+                    @click="mobileMenuOpen = false" x-cloak></div>
+    
+                <!-- Sidebar Menu -->
+                <div x-show="mobileMenuOpen" class="fixed top-0 left-0 w-2/3 h-full bg-white shadow-md p-4 z-50" x-cloak>
+                    <!-- Close Button Inside Sidebar -->
+                    <button @click="mobileMenuOpen = false" class="mb-4 p-2 text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                            </path>
+                        </svg>
+                    </button>
+    
+                    <!-- Sidebar Links -->
+                    <div x-data="{ open: false }" class="relative">
+                        <button @click="open = !open"
+                            class="flex justify-between w-full px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <span>Shop</span>
+                            <svg class="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+    
+                        <!-- Dropdown Menu -->
+                        <div x-show="open" @click.away="open = false" x-cloak
+                            class="absolute mt-2 w-48 bg-white rounded-md shadow-lg z-20">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Men</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Women</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Kids</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Accessories</a>
+                        </div>
+                    </div>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">On Sale</a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">New Arrivals</a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Brands</a>
+                    <a href="signup.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Sign UP | Sign in</a>
+                    <a href="ShopCart.html" class="w-full h-10 inline-block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="w-5 h-5">
+                            <path
+                                d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
+                        </svg>
+                    </a>
+    
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <div class="bg-gray-100 py-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <div class="h-56 bg-gray-200 relative">
+                    <img src="/img/home-right.png" alt="Cover Image" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4">
+                        <h2 class="text-2xl font-bold text-white">John Doe</h2>
+                        <p class="text-gray-300">Software Engineer</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center space-x-4">
+                            <img src="/img/avatar-1.png" alt="Profile Image" class="w-16 h-16 rounded-full">
+                            <div>
+                                <h3 class="text-lg font-semibold">John Doe</h3>
+                                <p class="text-gray-500">Software Engineer</p>
+                            </div>
+                        </div>
+                        <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">
+                            Follow
+                        </button>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold mb-2">About</h3>
+                        <p class="text-gray-700">
+                            I'm a software engineer with a passion for building innovative and user-friendly
+                            applications. I
+                            have experience in various programming languages and frameworks, and I'm always eager to
+                            learn
+                            new technologies.
+                        </p>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold mb-2">Skills</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-gray-600">JavaScript</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-gray-600">React</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-gray-600">Node.js</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-gray-600">SQL</span>
+                            <span class="bg-gray-200 px-3 py-1 rounded-full text-gray-600">Git</span>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold mb-2">Social</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-gray-700">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-gray-700">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-gray-700">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="/assts/js/main.js"></script>
+
+</html>
