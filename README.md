@@ -4,6 +4,10 @@ A visually appealing and responsive e-commerce frontend built using modern web t
 This project is a fully responsive and interactive frontend for an e-commerce website. It showcases a clean design, dynamic elements, and a seamless user experience. Built with simplicity and efficiency in mind, the site is optimized for mobile and desktop browsing.
 
 The website features a product catalog, lightbox image gallery for product previews, and an elegant layout using Tailwind CSS for styling.
+## To See Live
+
+`https://ecommerceclothesshop.netlify.app/`
+
 ## Features
 - Responsive design with Tailwind CSS
 - Interactive product gallery using Lightbox
